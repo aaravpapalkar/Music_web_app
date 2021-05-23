@@ -28,6 +28,13 @@ function play() {
     song.play();
     song.setVolume(1);
     song.rate(1);
+    song2.play();
+    song2.setVolume(1);
+    song2.rate(1);
+}
+
+function pause() {
+    song.pause();
 }
 
 function gotPoses(results) {
