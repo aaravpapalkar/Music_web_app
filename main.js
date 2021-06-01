@@ -1,6 +1,7 @@
 left_wristY = 0;
 right_wristY = 0;
 song = "";
+song2 = "";
 
 function preload() {
     song = loadSound("music.mp3");
@@ -24,18 +25,6 @@ function draw() {
     image(video, 0, 0, 600, 500);
 }
 
-function play() {
-    song.play();
-    song.setVolume(1);
-    song.rate(1);
-    song2.play();
-    song2.setVolume(1);
-    song2.rate(1);
-}
-
-function pause() {
-    song.pause();
-}
 
 function gotPoses(results) {
     if (results.length > 0) {
