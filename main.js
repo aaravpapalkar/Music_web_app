@@ -1,5 +1,7 @@
 left_wristY = 0;
 right_wristY = 0;
+left_wristX = 0;
+right_wristX = 0;
 song = "";
 song2 = "";
 
@@ -31,5 +33,7 @@ function gotPoses(results) {
         console.log(results);
         left_wristY = results[0].pose.leftWrist.y
         right_wristY = results[0].pose.rightWrist.y;
+        left_wristX = results[0].pose.leftWrist.x
+        right_wristX = results[0].pose.rightWrist.x;
     }
 }
