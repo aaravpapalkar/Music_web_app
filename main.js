@@ -33,11 +33,26 @@ function draw() {
     if (score_of_left_wrist > 0.2) {
         circle(left_wristX, left_wristY, 20);
         song2.stop();
+
+        if (song.isPlaying() == false) {
+            song.play();
+            document.getElementById("song_name").innerHTML = "Peter Pan song";
+        }
     }
 
     if (song.isPlaying() == false) {
-        song.play();
-        document.getElementById("song_name").innerHTML = "Harry Potter Theme Song";
+        song2.play();
+        document.getElementById("song_name").innerHTML = "Peter Pan song";
+    }
+
+    if (score_of_right_wrist > 0.2) {
+        circle(right_wristX, right_wristY, 20);
+        song.stop();
+
+        if (song2.isPlaying() == false) {
+            song2.play();
+            document.getElementById("song_name").innerHTML = "Harry Potter Theme Song";
+        }
     }
 }
 
@@ -50,5 +65,6 @@ function gotPoses(results) {
         left_wristX = results[0].pose.leftWrist.x
         right_wristX = results[0].pose.rightWrist.x;
         score_of_left_wrist = results[0].pose.keypoints[9].score;
+        score_of_right_wrist = results[0].pose.keypoints[10].score;
     }
 }
