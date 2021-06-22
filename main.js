@@ -40,11 +40,6 @@ function draw() {
         }
     }
 
-    if (song.isPlaying() == false) {
-        song2.play();
-        document.getElementById("song_name").innerHTML = "Peter Pan song";
-    }
-
     if (score_of_right_wrist > 0.2) {
         circle(right_wristX, right_wristY, 20);
         song.stop();
